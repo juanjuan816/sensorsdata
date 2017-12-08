@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>需求梳理</title>
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<script type="text/javascript">
+$(document).ready(function(){
+     var slideBox = $(".slideBox");
+     var ul = slideBox.find("ul");
+     var oneWidth = slideBox.find("ul li").eq(0).width();
+     console.log(oneWidth)
+     var number = slideBox.find(".spanBox span");            //注意分号 和逗号的用法
+     var timer = null;
+     var sw = 0;                    
+     //每个span绑定click事件，完成切换颜色和动画，以及读取参数值
+     number.on("click",function (){
+     $(this).addClass("active").siblings("span").removeClass("active");
+     sw=$(this).index();
+     ul.animate({
+            "right":oneWidth*sw,    //ul标签的动画为向左移动；
+               });
+     });
+     //左右按钮的控制效果
+     $(".next").stop(true,true).click(function (){
+         sw++;
+         if(sw==number.length){sw=0};
+         number.eq(sw).trigger("click");
+         });
+    $(".prev").stop(true,true).click(function (){
+        sw--;
+        if(sw==number.length){sw=0};
+        number.eq(sw).trigger("click");
+        });
+    //定时器的使用，自动开始
+    timer = setInterval(function (){
+        sw++;
+        if(sw==number.length){sw=0};
+        number.eq(sw).trigger("click");
+        },10000);
+    //hover事件完成悬停和，左右图标的动画效果
+    slideBox.hover(function(){
+        $(".next,.prev").animate({
+            "opacity":1,
+            },200);
+        clearInterval(timer);
+        },function(){
+            $(".next,.prev").animate({
+                "opacity":0.5,
+                },500);
+        timer = setInterval(function (){
+        sw++;
+        if(sw==number.length){sw=0};
+        number.eq(sw).trigger("click");
+        },10000);
+            })
+    
+})
+</script>
+<body>
+	<!--header start-->
+	<div id="header" class="g_header">
+        <div class="wrapper">
+
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="img/logo.jpg" alt="神策需求梳理">神策需求梳理
+                </a>
+            </h1>
+
+            <div class="nav">
+                <ul>
+                    <li><a href="finance.html" class="require_login">创建需求梳理文档</a></li>
+                    <li><a href="mine.html" class="require_login">我的需求梳理 </a></li>
+                    <li><a href="help.html">帮助中心</a></li>
+                </ul>
+            </div>
+
+            <div class="account">
+                <div id="login_checked" class="logged_in">
+                    <img class="avatar" alt="avatar">
+                    <span class="name"></span>
+                    <span class="splitor">|</span>
+                    <a href="javascript:;" id="logout" class="logout">退出</a>
+                </div>
+                <div id="login_checking" class="not_logged_in" style="display: block;">
+                    <a id="login" href="javascript:;" class="btn btn_green btn_small">登录</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--header end-->
+	<!--lunbo start-->
+		<div class="slideBox">
+		    <ul>
+			    <li><img src="img/slide1.png" alt=""/></li>
+			    <li><img src="img/slide2.png" alt=""/></li>
+			    <li><img src="img/slide3.png" alt=""/></li>
+		    </ul>
+		    <div class="spanBox">
+			    <span class="active">1</span>
+			    <span>2</span>
+			    <span>3</span>
+			</div>
+		</div>
+	<!--lunbo end-->
+	<!--buzhou start-->
+		<ul class="buzhou">
+          <li>
+            <img class="icon" src="">
+            <img class="icon inverse" src="">
+            <p class="h3">选择行业</p>
+            <p class="h5 detail">根据所在行业模板进一步梳理需求</p>
+            <a class="btn btn-standard3 area_features" name="area_features" href="">了解更多</a>
+          </li>
+          <li>
+            <img class="icon" src="">
+            <img class="icon inverse" src="">
+            <p class="h3">用户行为</p>
+            <p class="h5 detail">梳理用户在产品中的主要行为，便于后续的事件设计</p>
+            <a class="btn btn-standard3 area_features" name="area_features" href="/features/multidimensional.html">了解更多</a>
+          </li>
+          <li>
+            <img class="icon" src="">
+            <img class="icon inverse" src="">
+            <p class="h3">指标体系</p>
+            <p class="h5 detail">按照部门，进行各部门的指标梳理</p>
+            <a class="btn btn-standard3 area_features" name="area_features" href="/features/multidimensional.html">了解更多</a>
+          </li>
+          <li>
+            <img class="icon" src="">
+            <img class="icon inverse" src="">
+            <p class="h3">一键生成</p>
+            <p class="h5 detail">确认各个部署已详细梳理，可以选择一键生成需求梳理文档</p>
+            <a class="btn btn-standard3 area_features" name="area_features" href="/features/multidimensional.html">了解更多</a>
+          </li>
+        </ul>
+	<!--buzhou end-->
+
+	<!--footer start-->
+		<footer>
+		    <section>
+		      <nav>
+		        <ul class="cards">
+		          <li>
+		            <h3>产品特点</h3>
+		            <ul>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/features/multidimensional.html">多维分析</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/features/collection.html">数据采集</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/features/paas.html">PaaS 平台</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/features/private.html">私有化部署</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/features/contrast.html">功能对比</a></li>
+		            </ul>
+		          </li>
+		          <li>
+		            <h3>解决方案</h3>
+		            <ul>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/solutions/finance.html">互联网金融</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/solutions/ecommerce.html">电子商务</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/solutions/security.html">证券</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/solutions/retail.html">零售</a></li>
+		            </ul>
+		          </li>
+		          <li>
+		            <h3>用户中心</h3>
+		            <ul>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/service/service.html">客户服务</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/workorder/" target="_blank">工单</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/manual/" target="_blank">使用手册</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/manual/data_import.html" target="_blank">技术文档</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/blog/tag/courses/" target="_blank">视频学习</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/blog/" target="_blank">博客文章</a></li>
+		            </ul>
+		          </li>
+		          <li>
+		            <h3>关于我们</h3>
+		            <ul>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/about/aboutus.html">公司介绍</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/blog/tag/news/" target="_blank">公司动态</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/about/joinus.html">加入我们</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/about/aboutus.html#callme">联系我们</a></li>
+		            </ul>
+		          </li>
+		          <li>
+		            <h3>体验 DEMO</h3>
+		            <ul>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/demo/demo.html">体验 DEMO</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/topic/ds2017/">数据驱动大会</a></li>
+		            </ul>
+		          </li>
+		        </ul>
+		        <div class="left">
+		          <p class="h6">
+		            Tel：<a href="tel:4006509827">400-650-9827</a>
+		          </p>
+		          <p class="h6">
+		            E-mail：contact@sensorsdata.cn</a>
+
+		          </p>
+		          <p>
+		            <a class="mp"><img class="qrcode" src="img/erweima.png"></a>
+		          </p>
+		          <p class="h6">关注公众号</p>
+		          <p class="h6">
+		            © 2017 神策数据 京ICP备15055677号
+		          </p>
+		        </div>
+		      </nav>
+		    
+		  </section>
+		</footer>
+	<!--footer end-->
+
+</body>
+</html>

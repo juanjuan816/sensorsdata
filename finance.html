@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>需求梳理</title>
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<!--header start-->
+	<div id="header" class="g_header">
+        <div class="wrapper">
+
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="img/logo.jpg" alt="神策需求梳理">神策需求梳理
+                </a>
+            </h1>
+
+            <div class="nav">
+                <ul>
+                    <li><a href="finance.html" class="require_login active">创建需求梳理文档</a></li>
+                    <li><a href="mine.html" class="require_login">我的需求梳理 </a></li>
+                    <li><a href="help.html">帮助中心</a></li>
+                </ul>
+            </div>
+
+            <div class="account">
+                <div id="login_checked" class="logged_in">
+                    <img class="avatar" alt="avatar">
+                    <span class="name"></span>
+                    <span class="splitor">|</span>
+                    <a href="javascript:;" id="logout" class="logout">退出</a>
+                </div>
+                <div id="login_checking" class="not_logged_in" style="display: block;">
+                    <a id="login" href="javascript:;" class="btn btn_green btn_small">登录</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--header end-->
+    <div class="container">
+    	<!--行业选择 start-->
+    	<div class="hy fill">
+    		<span class="info">行业选择</span>
+		    <div class="dropdown">
+				<button type="button" class="btn dropdown-toggle" id="dropdownMenu1" 
+						data-toggle="dropdown">
+					行业
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">通用</a>
+					</li>
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">互金-资金端</a>
+					</li>
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">互金-资产端</a>
+					</li>
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">电商</a>
+					</li>
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">企业服务</a>
+					</li>
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">零售</a>
+					</li>
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">在线教育</a>
+					</li>
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">手游</a>
+					</li>
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">证券</a>
+					</li>
+					<li role="presentation" class="divider"></li>
+					<li role="presentation">
+						<a role="menuitem" tabindex="-1" href="#">特殊定制</a>
+					</li>
+				</ul>
+			</div>
+			<span class="detail">tip:我们服务的客户类型主要分为：互联网金融、电商、企业服务、零售、在线教育、游戏、证券。如果您不属于其中分类，可以使用通用模板或者联系我们分析师进行推荐</span>
+		</div>
+		<!--行业选择 end-->
+
+		<!--用户行为梳理 start-->
+	    <div class="userAction fill">
+	    	<span class="info">用户行为梳理</span>
+			<span class="detail">用户行为梳理，主要梳理用户在app或者web中的动作。</span>
+			<div class="action">
+				<span class="step">1.基础事件</span>
+				<div class="box">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 启动
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 激活
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 点击
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 浏览
+						</label>
+					</div>
+					<div class="form-group">
+					    <input type="text" class="form-control" id="name" placeholder="如有其它基础行为请在这填写">
+					</div>
+				</div>
+			</div>
+			<div class="action">
+				<span class="step">2.注册/登录</span>
+				<div class="box">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 注册
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 登录
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 注册/登录（不区分）
+						</label>
+					</div>
+					<div class="form-group">
+					    <input type="text" class="form-control" id="name" placeholder="如有其它登录行为请在这填写">
+					</div>
+				</div>
+			</div>
+			<div class="action">
+				<span class="step">3.开户相关</span>
+				<div class="box">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 绑定银行卡
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 实名认证
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 风险测评
+						</label>
+					</div>
+					<div class="form-group">
+					    <input type="text" class="form-control" id="name" placeholder="如有其它开户行为请写在这里">
+					</div>
+				</div>
+			</div>
+			<div class="action">
+				<span class="step">4.交易</span>
+				<div class="box">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 充值
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 提现
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 投资
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 积分/优惠券使用
+						</label>
+					</div>
+					<div class="form-group">
+					    <input type="text" class="form-control" id="name" placeholder="如有其它开户行为请写在这里">
+					</div>
+				</div>
+			</div>
+			<div class="action">
+				<span class="step">5.分享</span>
+				<div class="box">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 分享
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 邀请
+						</label>
+					</div>
+					<div class="form-group">
+					    <input type="text" class="form-control" id="name" placeholder="如有其它开户行为请写在这里">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--用户行为梳理 end-->
+
+		<!--指标体系搭建 start-->
+	    <div class="zhibiao fill">
+	    	<span class="info">指标体系梳理</span>
+			<span class="detail">指标体系梳理，主要是判断产品使用中关心的指标或者场景</span>
+			<div class="action">
+				<span class="step">1.老板关心</span>
+				<div class="box">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 新增投资人数
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 新增投资金额
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 复投率
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 累计投资人数
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 累计投资金额
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 放款人数
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 放款金额
+						</label>
+					</div>
+					<div class="form-group">
+					    <input type="text" class="form-control" id="name" placeholder="如有其它老板关心的指标请在这填写">
+					</div>
+				</div>
+			</div>
+			<div class="action">
+				<span class="step">2.市场相关</span>
+				<div class="box">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 活跃用户数
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> pv,uv
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 注册用户数
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 分渠道注册转化
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 分渠道投资金额
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 分渠道复投率
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 分渠道留存
+						</label>
+					</div>
+					<div class="form-group">
+					    <input type="text" class="form-control" id="name" placeholder="如有其它市场部门关心的指标请在这填写">
+					</div>
+				</div>
+			</div>
+			<div class="action">
+				<span class="step">3.运营相关</span>
+				<div class="box">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 活跃用户数
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> pv,uv
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 新房客占比
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 累计投资人数
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 累计投资金额
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 充值人数
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 充值金额
+						</label>
+					</div>
+					<div class="form-group">
+					    <input type="text" class="form-control" id="name" placeholder="如有其它运营部门关心的指标请在这填写">
+					</div>
+				</div>
+			</div>
+			<div class="action">
+				<span class="step">4.产品相关</span>
+				<div class="box">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 活跃用户数
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 平均web访问时长
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 平均app访问时长
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 跳出率
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 注册转化率
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 投资转化率
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox"> 用户路径
+						</label>
+					</div>
+					<div class="form-group">
+					    <input type="text" class="form-control" id="name" placeholder="如有其它产品部门关心的指标请在这填写">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--指标体系搭建 end-->
+		<div class="sub_btn">
+			<button type="button" class="btn btn-primary">一键生成</button>
+			<button type="button" class="btn btn-default">预览</button>
+		</div>
+	</div>	
+
+	<!--footer start-->
+		<!--<footer>
+		    <section>
+		      <nav>
+		        <ul class="cards">
+		          <li>
+		            <h3>产品特点</h3>
+		            <ul>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/features/multidimensional.html">多维分析</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/features/collection.html">数据采集</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/features/paas.html">PaaS 平台</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/features/private.html">私有化部署</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/features/contrast.html">功能对比</a></li>
+		            </ul>
+		          </li>
+		          <li>
+		            <h3>解决方案</h3>
+		            <ul>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/solutions/finance.html">互联网金融</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/solutions/ecommerce.html">电子商务</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/solutions/security.html">证券</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/solutions/retail.html">零售</a></li>
+		            </ul>
+		          </li>
+		          <li>
+		            <h3>用户中心</h3>
+		            <ul>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/service/service.html">客户服务</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/workorder/" target="_blank">工单</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/manual/" target="_blank">使用手册</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/manual/data_import.html" target="_blank">技术文档</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/blog/tag/courses/" target="_blank">视频学习</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/blog/" target="_blank">博客文章</a></li>
+		            </ul>
+		          </li>
+		          <li>
+		            <h3>关于我们</h3>
+		            <ul>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/about/aboutus.html">公司介绍</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/blog/tag/news/" target="_blank">公司动态</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/about/joinus.html">加入我们</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/about/aboutus.html#callme">联系我们</a></li>
+		            </ul>
+		          </li>
+		          <li>
+		            <h3>体验 DEMO</h3>
+		            <ul>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/demo/demo.html">体验 DEMO</a></li>
+		              <li class="h5"><a class="area_bottom" name="area_bottom" href="/topic/ds2017/">数据驱动大会</a></li>
+		            </ul>
+		          </li>
+		        </ul>
+		        <div class="left">
+		          <p class="h6">
+		            Tel：<a href="tel:4006509827">400-650-9827</a>
+		          </p>
+		          <p class="h6">
+		            E-mail：contact@sensorsdata.cn</a>
+
+		          </p>
+		          <p>
+		            <a class="mp"><img class="qrcode" src="img/erweima.png"></a>
+		          </p>
+		          <p class="h6">关注公众号</p>
+		          <p class="h6">
+		            © 2017 神策数据 京ICP备15055677号
+		          </p>
+		        </div>
+		      </nav>
+		    
+		  </section>
+		</footer>
+	<!--footer end-->
+
+</body>
+</html>
